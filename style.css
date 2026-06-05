@@ -1,0 +1,829 @@
+/* ==========================================================================
+   1. Configuration Générale & Thème Clair (Lumineux & Moderne)
+   ========================================================================== */
+body {
+    font-family: 'Montserrat', 'Segoe UI', Helvetica, Arial, sans-serif;
+    background-color: #f4f6f9; /* Fond clair, doux pour les yeux */
+    color: #2f3542;           /* Texte principal gris foncé très lisible */
+    margin: 0;
+    padding: 30px 20px;
+    line-height: 1.6;
+}
+
+/* Gros titres principaux (Dégradé Sportif Énergie) */
+h1 {
+    font-size: 2.8rem;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #4834d4, #ff4757); /* Dégradé Bleu Royal / Rouge Athlé */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Paragraphes d'introduction globale (sous les h1) */
+body > p {
+    max-width: 850px;
+    margin: 0 auto 50px auto;
+    color: #57606f;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   2. Page d'Accueil : Profil & Blocs de Présentation (index.html)
+   ========================================================================== */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #e6e9ed;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(164, 176, 190, 0.15);
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    margin: 0 0 20px 0;
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4834d4;
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.containerleftright {
+    display: flex;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+}
+
+.left, .right {
+    flex: 1;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e6e9ed;
+    box-shadow: 0 10px 30px rgba(164, 176, 190, 0.2);
+}
+
+.containerleftright h2 {
+    color: #2f3542 !important; 
+    font-size: 1.05rem !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin: 15px 0;
+    letter-spacing: 0.3px;
+}
+
+.containerleftright hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, #4834d4, transparent);
+    margin: 0;
+}
+
+.section-boutons-accueil {
+    max-width: 1000px;
+    margin: 0 auto 15px auto;
+    padding: 0 20px;
+}
+
+.groupe-boutons-principaux, 
+.groupe-boutons-secondaires {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.bouton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #4834d4;
+    background: #ffffff;
+    border: 2px solid #4834d4;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    text-align: center;
+    min-width: 210px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.05);
+}
+
+.bouton:hover {
+    background: #4834d4; 
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.3);
+}
+
+.bouton-rs, .bouton-cv {
+    min-width: 150px;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    background: #f1f2f6;
+    border: 1px solid #cbd5e1;
+    color: #57606f;
+    box-shadow: none;
+}
+
+.bouton-rs:hover {
+    background: #2f3542;
+    border-color: #2f3542;
+    color: #ffffff !important;
+}
+
+.bouton-strava:hover {
+    background: #fc4c02 !important;
+    border-color: #fc4c02 !important;
+    box-shadow: 0 6px 15px rgba(252, 76, 2, 0.3);
+}
+
+.bouton-cv:hover {
+    background: #2ed573 !important;
+    border-color: #2ed573 !important;
+    box-shadow: 0 6px 15px rgba(46, 213, 115, 0.3);
+}
+
+@media (max-width: 768px) {
+    .containerleftright {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    .groupe-boutons-principaux, .groupe-boutons-secondaires {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .bouton {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* ==========================================================================
+   3. Page Parcours : Structure Chronologique (parcours.html)
+   ========================================================================== */
+/* Entête secondaire */
+.header2 {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e9ed;
+    margin-bottom: 30px;
+}
+
+.header2 a img {
+    /* Suppression du filtre invert pour laisser l'icône dans sa couleur d'origine */
+    transition: transform 0.2s ease;
+    opacity: 0.8;
+}
+
+.header2 a img:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.header2 h1 {
+    font-size: 1.2rem;
+    margin: 0 0 0 20px;
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #57606f;
+    text-shadow: none;
+}
+
+/* Boîtes d'expériences Blanches */
+.imggauche, .imgdroite {
+    display: flex;
+    align-items: center;
+    max-width: 950px;
+    margin: 35px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e6e9ed;
+    padding: 25px;
+    gap: 40px;
+    box-shadow: 0 8px 25px rgba(164, 176, 190, 0.15);
+    transition: all 0.3s ease;
+}
+
+.imgdroite {
+    flex-direction: row-reverse;
+}
+
+.imggauche:hover, .imgdroite:hover {
+    transform: translateY(-4px);
+    border-color: #4834d4;
+    box-shadow: 0 12px 35px rgba(72, 52, 212, 0.15);
+}
+
+/* Photos et Logos des Entreprises */
+.photo2 {
+    width: 220px;
+    height: 160px;
+    object-fit: contain;      /* RECTIFIÉ : Force le logo à s'afficher en ENTIER sans être coupé */
+    background-color: #ffffff; /* AJOUTÉ : Donne un fond blanc propre pour que les logos transparents/noirs ressortent bien */
+    padding: 10px;            /* AJOUTÉ : Laisse une petite marge interne pour que le logo ne colle pas aux bords */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.texte {
+    flex: 1;
+}
+
+.texte h2 {
+    font-size: 1.4rem;
+    color: #2f3542;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.texte h3 {
+    font-size: 1.1rem;
+    color: #4834d4; /* Nom de l'entreprise en bleu */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.texte p {
+    margin: 5px 0;
+    color: #747d8c;
+    font-size: 0.9rem;
+}
+
+.texte ul {
+    margin: 10px 0 20px 0;
+    padding-left: 20px;
+    color: #2f3542;
+}
+
+.texte li {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+/* Zone des badges de compétences */
+.detail_comp {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+/* Style des boutons / badges de compétences */
+.detail_comp .bouton, 
+.detail_comp button {
+    display: inline-block;
+    text-decoration: none;
+    background: #f1f2f6;
+    color: #4834d4;
+    border: 1px solid #e6e9ed;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0;
+    line-height: normal;
+    outline: none;
+    appearance: none;
+}
+
+.detail_comp .bouton:hover, 
+.detail_comp button:hover {
+    background: #4834d4;
+    color: #ffffff;
+    border-color: #4834d4;
+    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. Page Sport : Carton de Résultats (sport.html)
+   ========================================================================== */
+.containerceremony {
+    background: #ffffff;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #e6e9ed;
+    box-shadow: 0 15px 35px rgba(164, 176, 190, 0.2);
+    text-align: center;
+}
+
+#monImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#monImage:hover {
+    transform: scale(1.01);
+}
+
+/* Encadré des chronos et résultats (id="p1") */
+#p1 {
+    font-size: 1.15rem;
+    color: #2f3542;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 16px;
+    border-left: 6px solid #ff4757; /* Ligne rouge Athlé à gauche */
+    text-align: left;
+    max-width: 850px;
+    margin: 35px auto;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.02);
+}
+
+/* Boutons ronds pour les choix d'années */
+.button-sport {
+    display: inline-block;
+    text-decoration: none;
+    background: #ffffff;
+    color: #ff4757;
+    border: 2px solid #ff4757;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin: 15px 10px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.button-sport:hover {
+    color: #ffffff;
+    background-color: #ff4757;
+    box-shadow: 0 6px 15px rgba(255, 71, 87, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. Liens de retour / Pied de page
+   ========================================================================== */
+.bouton-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.bouton-style {
+    display: inline-block;
+    text-decoration: none;
+    color: #a4b0be;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.bouton-style:hover {
+    color: #2f3542;
+    border-bottom: 2px solid #ff4757;
+}
+
+/* ==========================================================================
+   6. Mode Mobile (Design Adaptatif)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body { padding: 15px 10px; }
+    h1 { font-size: 2rem; }
+    .containerleftright { flex-direction: column; gap: 20px; }
+    
+    .imggauche, .imgdroite {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    .photo2 { width: 100%; max-width: 300px; height: 180px; }
+    .texte ul { text-align: left; }
+    .detail_comp, .containerceremony { justify-content: center; padding: 20px; }
+}
+
+/* ==========================================================================
+   7. Page Spécifique : Compétences (competence.html)
+   ========================================================================== */
+
+/* Structure principale de la page compétences */
+.containerleftright2 {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* Colonne de gauche (Menu des boutons) */
+.left2 {
+    flex: 0 0 280px; /* Largeur fixe pour la liste des boutons */
+}
+
+.left2 nav {
+    display: flex;
+    flex-direction: column; /* Aligne les boutons les uns sous les autres verticalement */
+    gap: 12px;
+}
+
+/* Colonne de droite (Zone de texte des projets) */
+.right2 {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- LE STYLE DES BOUTONS DE COMPÉTENCES --- */
+.left2 .bouton, 
+.left2 button {
+    display: block;
+    width: 100%;
+    text-align: left; /* Aligne le texte à gauche à l'intérieur du bouton */
+    background: rgba(255, 165, 2, 0.1) !important; /* Fond orange translucide */
+    color: #ffa502 !important;                    /* Texte orange */
+    border: 1px solid rgba(255, 165, 2, 0.3) !important;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    
+    /* Écrase le style moche par défaut du navigateur */
+    margin: 0;
+    line-height: normal;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Effet au survol des boutons */
+.left2 .bouton:hover, 
+.left2 button:hover {
+    background: #ffa502 !important;
+    color: #0f1115 !important; /* Le texte devient noir pour être lisible */
+    box-shadow: 0 0 15px rgba(255, 165, 2, 0.4) !important;
+    transform: translateX(5px); /* Petit décalage vers la droite au survol */
+}
+
+/* --- LE STYLE DU BOUTON RETOUR --- */
+header {
+    max-width: 1100px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .bouton {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+    min-width: auto;
+}
+
+header .bouton:hover {
+    background: #ff4757 !important; /* Devient rouge dynamique */
+    border-color: #ff4757 !important;
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- MISE EN FORME DES TEXTES DE DROITE --- */
+#exploration1 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    text-align: left;
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #ffffff;
+}
+
+.right2 p {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    margin: 15px 0;
+    padding-left: 15px;
+    border-left: 3px solid #ff4757; /* Rappel sport : petite barre rouge à gauche du texte */
+}
+
+#img_meca {
+    margin-top: 20px;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- ADAPTATION SMARTPHONE --- */
+@media (max-width: 768px) {
+    .containerleftright2 {
+        flex-direction: column;
+    }
+    .left2 {
+        flex: none;
+        width: 100%;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   8. Page Parcours Scolaire (Optimisation Contraste & Alignement Gauche)
+   ========================================================================== */
+
+/* Structure de la carte principale */
+.imghaute, .imgbasse {
+    display: flex;
+    flex-direction: column;    /* Photo en haut, texte en bas */
+    align-items: flex-start;   /* RECTIFIÉ : Tout commence proprement aligné à gauche */
+    max-width: 700px;          
+    margin: 40px auto;         
+    background: rgba(30, 34, 42, 0.6); /* RECTIFIÉ : Fond légèrement plus opaque pour mieux faire ressortir le texte */
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 35px;             /* Plus d'espace interne */
+    gap: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Effet au survol */
+.imghaute:hover, .imgbasse:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 165, 2, 0.4); 
+    background: rgba(35, 40, 50, 0.8);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Gestion des logos d'écoles (Centrés en haut de la carte) */
+.imghaute .photo2, 
+.imgbasse .photo2 {
+    width: 100%;
+    max-width: 220px;          
+    height: 120px;             
+    object-fit: contain;       
+    background-color: #ffffff; 
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    align-self: center;        /* Garde uniquement le logo centré au milieu de la carte */
+}
+
+/* Alignement du bloc de texte */
+.imghaute .texte, 
+.imgbasse .texte {
+    width: 100%;
+    text-align: left;          /* RECTIFIÉ : Alignement à gauche naturel et très lisible */
+}
+
+/* Titres des diplômes */
+.imghaute .texte h2,
+.imgbasse .texte h2 {
+    font-size: 1.4rem;
+    color: #ffffff;            /* Blanc pur éclatant */
+    font-weight: 750;
+    margin-top: 5px;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+/* Noms des écoles */
+.imghaute .texte h3,
+.imgbasse .texte h3 {
+    font-size: 1.1rem;
+    color: #ffa502;            /* Orange vif bien visible */
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+/* Spécialité de parcours en italique */
+.specialite-titre {
+    font-size: 0.95rem !important;
+    color: #cbd5e1 !important; /* RECTIFIÉ : Blanc grisé plus lumineux pour être lisible */
+    font-style: italic;
+    margin-top: -2px;
+    margin-bottom: 10px;
+}
+
+/* Dates des périodes d'études */
+.date-parcours {
+    font-size: 0.85rem;
+    color: #ffffff;            /* RECTIFIÉ : Texte blanc sur petit badge */
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08); /* Petit badge sobre */
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Libellé "Compétences clés :" */
+.label-competence {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Liste des compétences scolaires réalignée proprement */
+.imghaute .texte ul, 
+.imgbasse .texte ul {
+    text-align: left;
+    margin: 0 0 25px 0;        /* Reset des marges externes */
+    padding-left: 18px;        /* Alignement parfait avec les titres */
+    color: #e2e8f0;            /* RECTIFIÉ : Blanc cassé très contrasté et reposant */
+}
+
+.imghaute .texte li, 
+.imgbasse .texte li {
+    margin-bottom: 8px;        /* RECTIFIÉ : Plus d'espace entre les lignes pour aérer */
+    font-size: 0.98rem;        /* Légèrement plus grand */
+    line-height: 1.4;
+}
+
+/* Ligne importante de statut de diplôme */
+.statut-diplome {
+    font-size: 1.05rem !important;
+    color: #ff4757 !important; /* Rouge athlétique bien distinct */
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 20px 0 10px 0 !important;
+    border-left: 3px solid #ff4757; /* Petite barre de rappel à gauche */
+    padding-left: 10px;
+}
+
+/* Zone des badges de compétences */
+.imghaute .detail_comp, 
+.imgbasse .detail_comp {
+    justify-content: flex-start; /* RECTIFIÉ : Les badges s'alignent aussi à gauche */
+    margin-top: 15px;
+}
+
+/* ==========================================================================
+   9. Page Détail d'un Projet Scolaire (Version Image Réduite)
+   ========================================================================== */
+
+/* Bouton retour spécifique */
+.bouton-retour-projet {
+    display: inline-block;
+    text-decoration: none;
+    color: #cd4848 !important;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+.bouton-retour-projet:hover {
+    background: #ff4757;
+    border-color: #ff4757;
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+    transform: translateX(-3px);
+}
+
+/* Conteneur des deux colonnes */
+.containerleftright2 {
+    display: flex;
+    gap: 30px;
+    max-width: 950px; /* Légèrement resserré pour un look plus compact */
+    margin: 40px auto;
+    padding: 0 20px;
+    align-items: flex-start;
+}
+
+/* Colonne Gauche : Image miniature */
+.left2-projet {
+    flex: 0 0 140px; /* Réduit la largeur de la colonne de gauche */
+    display: flex;
+    justify-content: center;
+}
+
+/* L'image devient une petite vignette discrète */
+.photo-projet {
+    width: 120px;        /* TAILLE RÉDUITE : Petite largeur */
+    height: 120px;       /* TAILLE RÉDUITE : Petite hauteur */
+    object-fit: cover;   /* Coupe proprement l'image en carré */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Colonne Droite : Contenu textuel */
+.right2-projet {
+    flex: 1;
+    background: rgba(30, 34, 42, 0.6);
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Titre du projet */
+.right2-projet h1 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+/* Badge sous le titre */
+.contexte-badge {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #ffa502;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+/* Paragraphes de description */
+.right2-projet p {
+    color: #e2e8f0;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    padding-left: 15px;
+    border-left: 3px solid #ff4757; /* Ligne verticale rouge athlé */
+}
+
+.right2-projet p strong {
+    color: #ffa502;
+}
+
+.right2-projet p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* --- Mode Mobile --- */
+@media (max-width: 768px) {
+    .containerleftright2 {
+        flex-direction: column; /* Aligne de haut en bas sur mobile */
+        align-items: center;
+        gap: 20px;
+    }
+    .left2-projet {
+        flex: none;
+        width: 100%;
+    }
+    .right2-projet {
+        padding: 25px;
+    }
+}
